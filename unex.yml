@@ -1,0 +1,12 @@
+Game: site
+ModId: 254
+FileName: Days Gone Support for Vortex
+PreviousFile: auto
+FileDescription: |-
+  Requires Vortex ^ 1.4.0
+
+  Download and install using the Extensions pane in Vortex.
+
+  To manually install, extract the zip to %APPDATA%\Vortex\plugins\game-daysgone.
+
+  Read about the changes in this release at daysgone.vortex.support/updates/v{{Version}}

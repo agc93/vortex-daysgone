@@ -15,6 +15,7 @@ DGV is still alpha-quality software! While I can test locally, I won't be able t
 - **Installing mods**: Installing mods from archive files works, deploying directly to your install directory.
 - **Managing mods**: The standard Vortex install/enable/disable/uninstall operations should all work just as they do for any other Vortex-managed game.
 - **Profiles**: Create multiple profiles for different sets of mods and quickly switch between them.
+- **Auto-`sfpaks`**: Vortex will automatically determine if your `sfpaks` folder needs renaming and handle it automatically.
 
 There's some features that we've included to get them in your hands as fast as possible, but might still have some rough edges:
 

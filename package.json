@@ -1,0 +1,41 @@
+{
+  "name": "game-daysgone",
+  "version": "0.0.1",
+  "description": "Adds support for Days Gone mods in Vortex",
+  "main": "./dist/index.js",
+  "scripts": {
+    "webpack": "node ./node_modules/webpack/bin/webpack --config webpack.config.js --display-error-details --progress --profile --color",
+    "build": "npm run webpack && extractInfo && copyfiles -f ./gameart.png ./dist/",
+    "build:remote": "npm run build && copyfiles -f ./dist/**.* P:/game-daysgone/"
+  },
+  "config": {
+    "game": "Days Gone"
+  },
+  "author": "agc93",
+  "license": "MIT",
+  "devDependencies": {
+    "@agc93/pak-reader": "0.0.3",
+    "@types/node": "^12.12.35",
+    "@types/react": "^16.9.43",
+    "@types/react-bootstrap": "^0.32.20",
+    "@types/redux": "^3.6.0",
+    "@types/redux-thunk": "^2.1.0",
+    "bluebird": "^3.7.2",
+    "copyfiles": "^2.4.1",
+    "electron": "^11.4.0",
+    "i18next": "^19.0.1",
+    "react": "^16.12.0",
+    "react-bootstrap": "^0.33.0",
+    "react-dom": "^16.12.0",
+    "react-redux": "^7.2.0",
+    "redux-act": "^1.8.0",
+    "ts-loader": "^6.0.4",
+    "typedoc": "^0.20.36",
+    "typescript": "~4.2.4",
+    "vortex-api": "github:Nexus-Mods/vortex-api#0064959",
+    "vortex-ext-common": "^0.3.1",
+    "webpack": "^4.35.0",
+    "webpack-cli": "^3.3.4"
+  },
+  "dependencies": {}
+}

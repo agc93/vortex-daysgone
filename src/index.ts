@@ -21,13 +21,9 @@ function main(context: IExtensionContext) {
         .addExtender(addInstalledPaksAttribute(MOD_FILE_EXT))
         .addExtender(ext.extender)
         .build();
-    var lo = new LoadOrderHelper(context.api, GAME_ID)
-        .withFilter((val, mod) => {
-            return mod ? mod.type == '' : false; //only include default mod types
-        });
     var evt = new EventHandler(context.api, GAME_ID);
+    context.requireExtension("Days Gone - Vortex Extension");
     context.once(() => {
-        log('debug', 'initialising your new extension!')
         installer.configure(context.api);
         //evt.gameModeActivated(async (id) => await refreshSfpakAssets(context.api, id));
         evt.gameModeActivated(async (id) => await refreshSfpakAssetsState(context.api, id));
@@ -37,57 +33,14 @@ function main(context: IExtensionContext) {
     context.registerTest('daysgone-sfpaks-enable', 'mod-activated', () => testSfpakConflicts(context.api))
     //context.registerTest('daysgone-sfpaks-start', 'profile-did-change', () => testSfpakConflicts(context.api))
     context.registerTest('daysgone-sfpaks-activate', 'gamemode-activated', () => testSfpakConflicts(context.api))
-    context.registerGame({
-        name: "Days Gone",
-        mergeMods: lo.createPrefix,
-        logo: 'gameart.png',
-        executable: () => EXE_PATH,
-        requiredFiles: [
-            EXE_PATH
-        ],
-        id: GAME_ID,
-        queryPath: findGame,
-        queryModPath: findModPath,
-        setup,
-        environment: {
-            SteamAPPId: STEAMAPP_ID.toString()
-        },
-        details: {
-            steamAppId: STEAMAPP_ID,
-            appDataPath: () => UserPaths.userDataPath(),
-            settingsPath: () => UserPaths.userConfigPath()
-        }
-    });
     context.registerInstaller(
         'dg-pakmods-adv',
         25,
         installer.testSupported,
         installer.advancedInstall
     );
-    context.registerLoadOrder({
-        deserializeLoadOrder: lo.deserialize,
-        serializeLoadOrder: lo.serialize,
-        gameId: GAME_ID,
-        validate: lo.validate,
-        toggleableEntries: false
-    });
     return true;
 }
-
-async function setup(discovery: IDiscoveryResult): Promise<void> {
-    await fs.ensureDirWritableAsync(UserPaths.paksPath());
-    return fs.ensureDirWritableAsync(UserPaths.installPaksPath(discovery.path))
-}
-
-function findModPath(gamePath: string): string {
-    return UserPaths.installPaksPath(gamePath);
-}
-
-async function findGame(): Promise<string> {
-    var entry: IGameStoreEntry = await util.GameStoreHelper.findByAppId(STEAMAPP_ID.toString())
-    return entry.gamePath;
-}
-
 
 
 module.exports = {

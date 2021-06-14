@@ -44,7 +44,7 @@ If you want to install the extension yourself, you will have to install the actu
 
 First, download the archive from [Nexus Mods](https://www.nexusmods.com/site/mods/254?tab=files) or [GitHub](https://https://github.com/agc93/vortex-daysgone/actions).
 
-Next, unpack the archive to somewhere convenient. You should have a directory named `game-daysgone` with at least three files inside:
+Next, unpack the archive to somewhere convenient. You should have a directory named `game-daysgone-enhanced` with at least three files inside:
 
 - info.json
 - index.js

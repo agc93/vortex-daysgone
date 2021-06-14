@@ -52,7 +52,7 @@ jobs:
         body: |
           Download and install using the Extensions pane in Vortex.
 
-          To manually install, extract the zip to %APPDATA%/Vortex/plugins/game-daysgone.
+          To manually install, extract the zip to %APPDATA%/Vortex/plugins/game-daysgone-enhanced.
         files: |
           ./extension/game-daysgone.zip
       env:

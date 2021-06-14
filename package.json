@@ -1,7 +1,7 @@
 {
-  "name": "game-daysgone",
+  "name": "game-daysgone-enhanced",
   "version": "0.0.1",
-  "description": "Adds support for Days Gone mods in Vortex",
+  "description": "Improves support for Days Gone mods in Vortex",
   "main": "./dist/index.js",
   "scripts": {
     "webpack": "node ./node_modules/webpack/bin/webpack --config webpack.config.js --display-error-details --progress --profile --color",
@@ -9,7 +9,7 @@
     "build:remote": "npm run build && copyfiles -f ./dist/**.* P:/game-daysgone/"
   },
   "config": {
-    "game": "Days Gone"
+    "extensionName": "Enhanced Support for Days Gone"
   },
   "author": "agc93",
   "license": "MIT",

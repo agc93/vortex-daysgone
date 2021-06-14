@@ -29,7 +29,7 @@
 &lt;/blockquote>
 &lt;p>If you want to install the extension yourself, you will have to install the actual extension files manually. Make sure you close Vortex before proceeding.&lt;/p>
 &lt;p>First, download the archive from &lt;a href="https://www.nexusmods.com/site/mods/254?tab=files">Nexus Mods&lt;/a> or &lt;a href="https://https://github.com/agc93/vortex-daysgone/actions">GitHub&lt;/a>.&lt;/p>
-&lt;p>Next, unpack the archive to somewhere convenient. You should have a directory named &lt;code>game-daysgone&lt;/code> with at least three files inside:&lt;/p>
+&lt;p>Next, unpack the archive to somewhere convenient. You should have a directory named &lt;code>game-daysgone-enhanced&lt;/code> with at least three files inside:&lt;/p>
 &lt;ul>
 &lt;li>info.json&lt;/li>
 &lt;li>index.js&lt;/li>
